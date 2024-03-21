@@ -11,12 +11,8 @@ import java.util.List;
 @RequestMapping("/api/push-notifications")
 public class PushNotificationController {
 
-    private final PushNotificationService pushNotificationService;
-
     @Autowired
-    public PushNotificationController(PushNotificationService pushNotificationService) {
-        this.pushNotificationService = pushNotificationService;
-    }
+    private PushNotificationService pushNotificationService;
 
     @GetMapping
     public ResponseEntity<List<PushNotification>> sendNotification() {
